@@ -4,23 +4,17 @@ import math
 
 class Circle:
     """ Circle Class with method to calculate the area of a circle.
-    and addition with area of another circle
-    For Example:
-    >>> Circle(3).add_area(Circle(4))
-    Circle(5.0)
-
-    >>> Circle(-1)
-    Traceback (most recent call last):
-    ...
-    ValueError: radius must be non-negative
-
-    """
-
+    and addition with area of another circle"""
     def __init__(self, radius):
         """Initialize a circle with given radius.
-        
+
         :param radius: radius of the circle, may be zero.
         :raises ValueError: if radius is negative.
+
+        >>> Circle(-1)
+        Traceback (most recent call last):
+        ...
+        ValueError: radius must be non-negative
         """
         if radius < 0:
             raise ValueError("radius must be non-negative")
@@ -31,6 +25,9 @@ class Circle:
         area of this circle and another circle.
         Since area is pi*r**2, the radii of the 3 circles
         should form a Pythagorean triple (r1^2 + r2^2 = r3^2)
+
+        >>> Circle(3).add_area(Circle(4))
+        Circle(5.0)
         """
         r1 = self.get_radius()
         r2 = circle.get_radius()
