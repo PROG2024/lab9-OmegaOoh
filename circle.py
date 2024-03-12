@@ -3,6 +3,19 @@ import math
 
 
 class Circle:
+    """ Circle Class with method to calculate the area of a circle.
+    and addition with area of another circle
+    For Example:
+    >>> circle = Circle(3).add_area(Circle(4))
+    >>> circle.radius
+    5.0
+
+    >>> circle = Circle(-1)
+    Traceback (most recent call last):
+    ...
+    ValueError: radius must be non-negative
+
+    """
 
     def __init__(self, radius):
         """Initialize a circle with given radius.
