@@ -14,26 +14,20 @@ import pytest
 
 def test_add_area():
     """ Test for add_area method"""
-    c1_rad = 3
-    c1 = Circle(c1_rad)
-    c2_rad = 4
-    c2 = Circle(c2_rad)
-    expected_rad = math.hypot(c1_rad, c2_rad)
-    expected_area = math.pi * expected_rad ** 2
-    assert c1.add_area(c2).radius == expected_rad
-    assert c1.add_area(c2).get_area() == expected_area
+    c1 = Circle(3)
+    c2 = Circle(4)
+    c_result = c1.add_area(c2)
+    assert c_result.radius == 5
+    assert c_result.get_area() == math.pi * 25
 
 
 def test_add_area_0():
     """ Test for add_area when radius is 0"""
-    c1_rad = 2
-    c1 = Circle(c1_rad)
-    c2_rad = 0
-    c2 = Circle(c2_rad)
-    expected_rad = math.hypot(c1_rad, c2_rad)
-    expected_area = math.pi * expected_rad ** 2
-    assert c1.add_area(c2).radius == expected_rad
-    assert c1.add_area(c2).get_area() == expected_area
+    c1 = Circle(3)
+    c2 = Circle(0)
+    c_result = c1.add_area(c2)
+    assert c_result.radius == 3
+    assert c_result.get_area() == math.pi * 9
 
 
 def test_negative_rad():
