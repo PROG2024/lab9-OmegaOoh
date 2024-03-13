@@ -25,7 +25,7 @@ class Counter:
 
     @property
     def count(self):
-        """ Return the count of the Counter"""
+        """ Getter of Count attribute"""
         return self.__count
 
     def increment(self):
