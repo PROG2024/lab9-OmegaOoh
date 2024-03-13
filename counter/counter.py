@@ -14,18 +14,22 @@ class Counter:
     __instance = None
 
     def __init__(self):
+        """ Constructor to Initialize the Counter Attribute"""
         self.__count = 0
 
     def __new__(cls, *args, **kwargs):
+        """ Allocate and Create new Counter if none, otherwise return existing one"""
         if not cls.__instance:
             cls.__instance = super().__new__(cls)
         return cls.__instance
 
     @property
     def count(self):
+        """ Return the count of the Counter"""
         return self.__count
 
     def increment(self):
+        """ Add 1 to current count and return the new count"""
         self.__count += 1
         return self.count
 
