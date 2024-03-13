@@ -7,3 +7,20 @@
 
    You can use pytest or unittest.
 """
+import pytest
+from counter import Counter
+
+
+def test_counter_singleton():
+    """ Test if the counter is singleton. """
+    counter = Counter()
+    counter2 = Counter()
+    assert counter == counter2
+
+
+def test_counter_count():
+    """ Test if all counter have the same count"""
+    counter = Counter()
+    counter2 = Counter()
+    assert counter.increment() == counter2.count
+
